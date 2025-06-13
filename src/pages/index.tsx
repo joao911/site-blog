@@ -1,19 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { FeatureSection } from "@/components/FeatureSection";
+import { HeroSection } from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} min-h-screen bg-black text-white`}
-    ></div>
+    <div>
+      <article className="flex flex-col">
+        <HeroSection />
+      </article>
+      <article className="flex flex-col">
+        <FeatureSection />
+      </article>
+    </div>
   );
 }
