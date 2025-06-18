@@ -1,4 +1,6 @@
-import { FeatureSection } from "@/components/FeatureSection";
+"use client";
+
+import { FeatureSection } from "@/components/FeatureSection/Index";
 import { HeroSection } from "@/components/HeroSection";
 
 export default function Home() {
