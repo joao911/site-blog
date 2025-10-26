@@ -3,12 +3,10 @@ import { Card } from "./Card";
 import { Button } from "../ui/button";
 import { ArrowBigRight } from "lucide-react";
 
-// import { Container } from './styles';
-
 export const FeatureSection: React.FC = () => {
   return (
     <div className="container flex flex-col gap-4">
-      <div className="flex gap-4 ">
+      <div className="flex flex-col gap-4 md:flex-row ">
         <Card.Root>
           <Card.ContainerCard>
             <Card.DesCription description="Simples" />
