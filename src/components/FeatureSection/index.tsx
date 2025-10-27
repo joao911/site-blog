@@ -26,11 +26,14 @@ export const FeatureSection: React.FC = () => {
             <Card.DesCription description="prático" />
             <Card.Title title="Venda para seu público através de uma plataforma única" />
           </Card.Header>
-          <Button className="rounded-full w-fit">
+          <Button className="hidden rounded-full w-fit md:block">
             Criar loja grátis <ArrowBigRight />
           </Button>
         </Card.ContainerCard>
         <Card.ImageCard />
+        <Button className="w-full rounded-full md:hidden">
+          Criar loja grátis <ArrowBigRight />
+        </Button>
       </Card.Root>
     </div>
   );

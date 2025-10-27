@@ -7,8 +7,8 @@ import { Button } from "../ui/button";
 
 export const SectionCallToAction: React.FC = () => {
   return (
-    <div className="bg-[url('/background.png')] h-[20rem]  flex flex-col items-center justify-center mt-14 gap-6 ">
-      <div className="absolute flex items-center justify-center p-4 rounded-full bg-cyan-300 top-[178rem]">
+    <div className="relative  bg-[url('/background.png')] h-[20rem]  flex flex-col items-center justify-center mt-14 gap-6 ">
+      <div className="absolute bottom-[-1.5rem] flex items-center justify-center p-4 rounded-full bg-cyan-300">
         <Store className="w-6 h-6 text-cyan-100" />
       </div>
       <h1 className="font-bold text-center text-gray-100 text-heading-lg">
