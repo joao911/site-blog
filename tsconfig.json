@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
+    "baseUrl": ".",
     "lib": [
       "dom",
       "dom.iterable",
@@ -19,6 +20,9 @@
     "incremental": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ],
       "@/*": [
         "./src/*"
       ]
@@ -27,7 +31,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".contentlayer/generated"
   ],
   "exclude": [
     "node_modules"
