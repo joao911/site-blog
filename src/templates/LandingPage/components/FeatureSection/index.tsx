@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./Card";
-import { Button } from "../ui/button";
 import { ArrowBigRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const FeatureSection: React.FC = () => {
   return (
