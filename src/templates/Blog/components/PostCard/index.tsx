@@ -1,15 +1,63 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const PostCard = () => {
+type Author = {
+  name: string;
+  avatar: string;
+};
+
+type PostCardProps = {
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+  date: string;
+  author: Author;
+};
+export const PostCard = ({
+  author,
+  date,
+  description,
+  image,
+  slug,
+  title,
+}: PostCardProps) => {
   return (
-    <Link href="/blog/">
-      <div>
+    <Link
+      href={`/blog/${slug}`}
+      className="w-full max-w-2xl rounded-xl border-[1px] border-gray-400 bg-gray-600 overflow-hidden transition-all duration-300 hover:border-[1px] hover:border-blue-300"
+    >
+      <div className="p-2 overflow-hidden rounded-md">
         <div className="relative">
-          <div className="absolute">
-            <span className="text-gray-300 text-body-xs"> 04/01/1991</span>
+          <div className="absolute top-0 right-0 px-3 py-1 bg-gray-600 backdrop-blur-sm rounded-bl-[10px]">
+            <span className="text-gray-300 text-body-xs"> {date}</span>
           </div>
-          <Image src="" alt="image" width={248} height={144} />
+          <Image
+            src={image}
+            alt="image"
+            width={289}
+            height={144}
+            className="object-cover object-center w-full h-40 rounded-t-xl"
+          />
+        </div>
+        <div className="px-2 mt-4 space-y-4">
+          <h2 className="text-gray-100 text-heading-sm line-clamp-3">
+            {title}
+          </h2>
+          <p className="text-gray-300 text-body-sm line-clamp-3">
+            {description}
+          </p>
+        </div>
+        <div className="flex items-center gap-3 border-t-[1px] border-gray-400 py-4">
+          <div className="relative h-5 w-5 md:h-6 md:w-6 overflow-hidden rounded-full border-blue-200 border-[1px]">
+            <Image
+              src={author?.avatar}
+              alt=""
+              fill
+              className="object-cover rounded-md"
+            />
+          </div>
+          <span className="text-gray-300 text-body-sm">{author?.name}</span>
         </div>
       </div>
     </Link>
