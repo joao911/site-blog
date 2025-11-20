@@ -51,9 +51,8 @@ export const PostCard = ({
           </p>
         </div>
 
-        <Avatar.AvatarContainer
-          avatar={<Avatar.AvatarImage image={String(author?.avatar)} />}
-        >
+        <Avatar.AvatarContainer>
+          <Avatar.AvatarImage image={String(author?.avatar)} />
           <Avatar.AvatarTitle title={String(author?.name)} />
         </Avatar.AvatarContainer>
       </div>

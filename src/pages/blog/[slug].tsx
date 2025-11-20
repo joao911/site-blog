@@ -44,16 +44,15 @@ export default function PostPage() {
               className="object-cover"
             />
           </figure>
-          <Avatar.AvatarContainer
-            avatar={
-              <Avatar.AvatarImage
-                image={String(post?.author?.avatar)}
-                size="md"
-              />
-            }
-          >
-            <Avatar.AvatarTitle title={String(post?.author?.name)} />
-            <Avatar.AvatarSubTitle subTitle={String(post?.author?.name)} />
+          <Avatar.AvatarContainer>
+            <Avatar.AvatarImage
+              image={String(post?.author?.avatar)}
+              size="md"
+            />
+            <Avatar.AvatarContent>
+              <Avatar.AvatarTitle title={String(post?.author?.name)} />
+              <Avatar.AvatarSubTitle subTitle={String(post?.author?.name)} />
+            </Avatar.AvatarContent>
           </Avatar.AvatarContainer>
         </article>
       </div>
