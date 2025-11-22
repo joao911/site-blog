@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Avatar } from "@/components/Avatar";
+
 type Author = {
   name: string;
   avatar: string;
@@ -37,7 +39,7 @@ export const PostCard = ({
             alt="image"
             width={289}
             height={144}
-            className="object-cover object-center w-full h-40 rounded-t-xl"
+            className="object-cover object-center w-full h-40 rounded-xl"
           />
         </div>
         <div className="px-2 mt-4 space-y-4">
@@ -48,17 +50,11 @@ export const PostCard = ({
             {description}
           </p>
         </div>
-        <div className="flex items-center gap-3 border-t-[1px] border-gray-400 py-4">
-          <div className="relative h-5 w-5 md:h-6 md:w-6 overflow-hidden rounded-full border-blue-200 border-[1px]">
-            <Image
-              src={author?.avatar}
-              alt=""
-              fill
-              className="object-cover rounded-md"
-            />
-          </div>
-          <span className="text-gray-300 text-body-sm">{author?.name}</span>
-        </div>
+
+        <Avatar.AvatarContainer>
+          <Avatar.AvatarImage image={String(author?.avatar)} />
+          <Avatar.AvatarTitle title={String(author?.name)} />
+        </Avatar.AvatarContainer>
       </div>
     </Link>
   );
