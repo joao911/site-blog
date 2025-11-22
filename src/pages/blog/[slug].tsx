@@ -48,8 +48,8 @@ export default function PostPage() {
                 className="object-cover"
               />
             </figure>
-            <header className="p-4 pb-0 md:p-6 lg:p-12">
-              <h1 className="mb-6 text-balance text-heading-lg md:text-heading-xl">
+            <header className="p-4 pb-0 mt-8 md:mt-12 md:p-6 lg:p-12 ">
+              <h1 className="mb-8 text-balance text-heading-lg md:text-heading-xl">
                 {post?.title}
               </h1>
               <Avatar.AvatarContainer border="without">
