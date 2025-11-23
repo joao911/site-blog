@@ -13,12 +13,19 @@ import {
 
 import { Avatar } from "@/components/Avatar";
 import { MarkDown } from "@/components/MarkDown";
+import { Button } from "@/components/ui/button";
+import { useShare } from "@/hooks/useShare";
 
 export default function PostPage() {
   const router = useRouter();
   const slug = router.query.slug as string;
   const post = allPosts.find((item) => item.slug === slug);
-  console.log(post);
+  const postUrl = `https://site.set/blog/${slug}`;
+  const { shareButtons } = useShare({
+    url: postUrl,
+    title: post?.title,
+    text: post?.description,
+  });
   return (
     <main className="mt-32 text-gray-100">
       <div className="container px-4 space-y-12 md:px-8">
@@ -38,7 +45,7 @@ export default function PostPage() {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr-300px] gap-6 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8 lg:gap-12">
           <article className="bg-gray-600 rounded-lg overflow-hidden border-gray-400 border-[1px]">
             <figure className="relative aspect-[16/10] w-full overflow-hidden rounded-lg">
               <Image
@@ -71,6 +78,33 @@ export default function PostPage() {
               <MarkDown content={String(post?.body.raw)} />
             </div>
           </article>
+
+          <aside className="space-y-6">
+            <div className="bg-transparent rounded-lg ">
+              <h2 className="mb-4 text-gray-100 text-heading-xs">
+                Compartilhar
+              </h2>
+              <div className="space-y-3">
+                {shareButtons.map((item) => (
+                  <Button
+                    key={item.provider}
+                    className="justify-start w-full gap-2"
+                    variant="outline"
+                    onClick={() => item.action()}
+                  >
+                    {item.icon}
+                    {item.provider}
+                  </Button>
+                ))}
+                <Button
+                  className="justify-start w-full gap-2"
+                  variant="outline"
+                >
+                  Twitter
+                </Button>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
