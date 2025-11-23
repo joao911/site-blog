@@ -3,7 +3,6 @@ import { MarkDown } from "@/components/MarkDown";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -84,7 +83,7 @@ export const BlogPostPage = () => {
 
           <aside className="space-y-6">
             <div className="bg-transparent rounded-lg ">
-              <h2 className="hidden mb-4 text-gray-100 md:block text-heading-xs">
+              <h2 className="hidden mb-4 text-gray-100 text-heading-xs md:block">
                 Compartilhar
               </h2>
               <div className="flex flex-row gap-2 md:flex-col">
@@ -96,7 +95,7 @@ export const BlogPostPage = () => {
                     onClick={() => item.action()}
                   >
                     {item.icon}
-                    <span className="hidden text-gray-100 md:block">
+                    <span className="hidden text-gray-100 group-hover:text-blue-200 md:block">
                       {item.provider}
                     </span>
                   </Button>
