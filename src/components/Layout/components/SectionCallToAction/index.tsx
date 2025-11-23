@@ -1,9 +1,7 @@
 import React from "react";
 import { MoveRight, Store } from "lucide-react";
 
-import { Button } from "../../../../components/ui/button";
-
-// import { Container } from './styles';
+import { Button } from "../../../ui/button";
 
 export const SectionCallToAction: React.FC = () => {
   return (
