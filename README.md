@@ -36,11 +36,34 @@ Clone o repositório e instale as dependências:
 
 ```bash
 pnpm install
-pnpm dev
+pnpm run dev
+```
 
-### Com `pnpm`
+### Com `yarn`
 
 ```bash
-pnpm install
-pnpm dev
+yarn install
+yarn dev
+```
+
+### Com npm
+
+```bash
+npm install
+npm run dev
+```
+
+## 🧩 Estrutura do Projeto
+
+
+```markdown
+## 🧩 Estrutura do Projeto
+
+- `app/` — Rotas utilizando **App Router**
+- `pages/` — Rotas clássicas utilizando **Page Router**
+- `content/` — Postagens em `.mdx` gerenciadas pelo **Contentlayer**
+- `components/` — Componentes reutilizáveis com **shadcn/ui**
+- `hooks/` — Hooks personalizados (clipboard, compartilhar, etc.)
+- `styles/` — Estilos globais
+
 
