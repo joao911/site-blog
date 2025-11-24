@@ -1,6 +1,5 @@
 import { Avatar } from "@/components/Avatar";
 import { MarkDown } from "@/components/MarkDown";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,17 +11,16 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { useShare } from "@/hooks/useShare";
-import { allPosts } from "contentlayer/generated";
+import { allPosts, Post } from "contentlayer/generated";
 
 import React from "react";
 
-// import { Container } from './styles';
+export type BlogPostPageProps = {
+  post: Post;
+};
 
-export const BlogPostPage = () => {
-  const router = useRouter();
-  const slug = router.query.slug as string;
-  const post = allPosts.find((item) => item.slug === slug);
-  const postUrl = `https://site.set/blog/${slug}`;
+export const BlogPostPage = ({ post }: BlogPostPageProps) => {
+  const postUrl = `https://site.set/blog/${post?.slug}`;
   const { shareButtons } = useShare({
     url: postUrl,
     title: post?.title,
