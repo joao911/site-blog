@@ -32,6 +32,12 @@ O objetivo é criar um ambiente de estudos e prática, especialmente explorando 
 
 Clone o repositório e instale as dependências:
 
+### link do projeto
+
+```bash
+git@github.com:joao911/site-blog.git
+```
+
 ### Com `pnpm`
 
 ```bash
@@ -65,5 +71,12 @@ npm run dev
 - `components/` — Componentes reutilizáveis com **shadcn/ui**
 - `hooks/` — Hooks personalizados (clipboard, compartilhar, etc.)
 - `styles/` — Estilos globais
+```
+
+### link do figma do projeto
+
+```bash
+https://www.figma.com/design/ygP6gSpkZgDGAk6RZERD6P/Landing-Page-e-Blog--Community-?t=ftzSEXdrf89O1H8G-0
+```
 
 
