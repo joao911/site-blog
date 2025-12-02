@@ -29,7 +29,7 @@ export const HeroSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-2 mt-5 text-white md:items-start ls:items-start">
+            <div className="flex flex-col items-center gap-2 mt-5 text-white md:items-start">
               <Button className="rounded-full w-fit" asChild>
                 <Link href="/criar-loja">
                   Criar loja grátis
@@ -48,9 +48,10 @@ export const HeroSection = () => {
           <Image
             src="/heroBG.svg"
             alt="Ilustração com ícones de store, tag e sacola"
-            width={200}
+            width={400}
             height={400}
-            className="object-contain w-auto h-full"
+            className="object-contain"
+            priority
           />
         </div>
       </div>
