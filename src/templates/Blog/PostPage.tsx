@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar } from "@/components/Avatar";
 import { MarkDown } from "@/components/MarkDown";
 import Link from "next/link";
