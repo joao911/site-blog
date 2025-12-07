@@ -1,13 +1,22 @@
-import React, { ChangeEvent, FormEvent, useCallback } from "react";
+"use client";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useRef,
+} from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+
 import { CircleX, SearchIcon } from "lucide-react";
-import { useRouter } from "next/router";
 import { cn } from "@/lib/utils";
 
-// import { Container } from './styles';
-
 export const Search: React.FC = () => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
-  const query = (router.query.q as string) ?? "";
+  const searchParams = useSearchParams();
+  const query = searchParams?.get("q") ?? "";
+  const hanQuery = !!searchParams?.has("q");
 
   const handleSearch = useCallback(
     (event: FormEvent) => {
@@ -21,15 +30,23 @@ export const Search: React.FC = () => {
 
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
-    router.push(`blog?q=${encodeURIComponent(newQuery)}`, undefined, {
-      shallow: true,
+    router.push(`/blog?q=${encodeURIComponent(newQuery)}`, {
       scroll: false,
     });
   };
 
   const handleClearQuery = () => {
-    router.push("/blog", undefined, { shallow: true, scroll: false });
+    router.push("/blog"),
+      {
+        scroll: false,
+      };
   };
+  useEffect(() => {
+    if (hanQuery) {
+      inputRef?.current?.focus();
+    }
+  }, [hanQuery]);
+
   return (
     <form className="relative w-full group md:w-60" onSubmit={handleSearch}>
       <SearchIcon
@@ -39,6 +56,7 @@ export const Search: React.FC = () => {
         )}
       />
       <input
+        ref={inputRef}
         type="text"
         value={query}
         onChange={handleQueryChange}

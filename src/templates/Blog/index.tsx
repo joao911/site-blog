@@ -1,4 +1,6 @@
-import { useRouter } from "next/router";
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import { Inbox } from "lucide-react";
 
 import { Search } from "@/components/Search";
@@ -10,8 +12,8 @@ export type BlogProps = {
   posts: Post[];
 };
 export const Blog = ({ posts }: BlogProps) => {
-  const router = useRouter();
-  const query = router.query.q as string;
+  const router = useSearchParams();
+  const query = router?.get("q") ?? "";
   const pageTitle = query
     ? `Resultados para "${query}"`
     : "Dicas e estrategias pra impulsionar seu negócio";
