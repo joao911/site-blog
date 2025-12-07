@@ -5,13 +5,10 @@ import { Inbox } from "lucide-react";
 
 import { Search } from "@/components/Search";
 import { PostCard } from "./components/PostCard";
-import { allPosts, Post } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { PostGridCard } from "./components/PostGridCard";
 
-export type BlogProps = {
-  posts: Post[];
-};
-export const Blog = ({ posts }: BlogProps) => {
+export const Blog = () => {
   const router = useSearchParams();
   const query = router?.get("q") ?? "";
   const pageTitle = query

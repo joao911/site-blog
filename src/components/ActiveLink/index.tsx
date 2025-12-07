@@ -3,7 +3,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 
 interface ActiveLinkProps extends LinkProps {
@@ -22,6 +21,7 @@ export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
         " text-action-sm transition-colors hover:text-blue-200 ",
         isActive ? "text-blue-200" : "text-gray-100"
       )}
+      {...rest}
     >
       {children}
     </Link>

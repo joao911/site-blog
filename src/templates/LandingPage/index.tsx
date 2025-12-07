@@ -1,8 +1,7 @@
-import { FeatureSection } from "./components/FeatureSection";
 import { HeroSection } from "./components/HeroSection";
-import { SectionCallToAction } from "../../components/Layout/components/SectionCallToAction";
-import { SectionCallToHistory } from "./components/SectionCallToHistory";
+import { FeatureSection } from "./components/FeatureSection";
 import { SectionSupport } from "./components/SectionSupport";
+import { SectionCallToHistory } from "./components/SectionCallToHistory";
 
 export const LandingPage = () => {
   return (

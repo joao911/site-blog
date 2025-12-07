@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { useShare } from "@/hooks/useShare";
-import { allPosts, Post } from "contentlayer/generated";
+import { Post } from "contentlayer/generated";
 
 import React from "react";
 

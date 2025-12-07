@@ -1,16 +1,7 @@
 import { useCallback, useMemo } from "react";
 import { ShareConfig, SOCIAL_PROVIDERS, SocialProvider } from "./socialMedia";
 
-type useShareProps = ShareConfig & {
-  clipBoardTImeout?: number;
-};
-
-export const useShare = ({
-  url,
-  title,
-  text,
-  clipBoardTImeout = 200,
-}: useShareProps) => {
+export const useShare = ({ url, title, text }: ShareConfig) => {
   const shareConfig = useMemo(() => {
     return {
       url,

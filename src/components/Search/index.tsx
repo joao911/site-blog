@@ -11,7 +11,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { CircleX, SearchIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export const Search: React.FC = () => {
+export const Search = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -30,16 +30,11 @@ export const Search: React.FC = () => {
 
   const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
-    router.push(`/blog?q=${encodeURIComponent(newQuery)}`, {
-      scroll: false,
-    });
+    router.push(`/blog?q=${encodeURIComponent(newQuery)}`);
   };
 
   const handleClearQuery = () => {
-    router.push("/blog"),
-      {
-        scroll: false,
-      };
+    router.push("/blog");
   };
   useEffect(() => {
     if (hanQuery) {
